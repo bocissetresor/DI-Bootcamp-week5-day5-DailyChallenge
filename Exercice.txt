@@ -1,0 +1,119 @@
+
+My Courses
+Calendar
+Leaderboard
+Slack
+Blog
+Learn More
+Full Stack Python
+Full Stack JavaScript
+Summer Camp
+About DI
+Home page
+Our Courses
+Dates & Tuition
+Blog
+Terms & Conditions
+Privacy
+ Full Stack Coding Bootcamp - PHP - Angular - Full Time - 2023 Angular Intermediate Mini Project Day Daily Challenge: Build Capacitor PWA
+Daily Challenge: Build Capacitor PWA
+Build Capacitor PWA With Ionic
+Instructions
+In this exercise you will build a simple Capacitor PWA with Ionic and Angular. You will integrate functionality to capture an image and share our current position using Capacitor plugins which work inside both native apps and PWAs!
+
+Ionic App Setup - create a blank new project with Angular integration and Capacitor directly enabled.
+
+
+Make Your Ionic App PWA Ready - Create an Angular app PWA ready is quite easy given the Angular schematics that automatically change all necessary parts of your project and inject a Service Worker in the right place
+
+
+Adding Capacitor Plugins -
+
+Capacitor plugins allow us to use native APIs or the according Web API implementation if we are running as a PWA (or standard website).
+
+That means, the same call/code to capture an image or get the user’s geolocation works across different devices, and triggers the right functionality depending on the current run environment.
+
+A tiny change is that since version 3 of Capacitor, all plugins need to be installed separately and don’t exist inside the core package anymore. But that doesn’t make the process any more complicated as you will see.
+
+Capturing Photos with PWA Elements - Yes, you can easily access the camera from within our PWa using Capacitor. The only problem is that there’s no decent web UI when capturing an image, and so you install another package called PWA Elements next to the camera plugin in our app now.
+
+npm i @capacitor/camera
+
+// Overlay for image capturing on the web
+npm install @ionic/pwa-elements
+
+
+Import the defineCustomElements and call it inside our src/main.ts
+
+
+Call getPhoto() to capture an image and set the resulting webPath to a local variable. Go ahead and change your home/home.page.ts
+
+
+Add a simple button and ion-img to display the captured image inside our app, so change the home/home.page.html
+
+
+Test this inside your browser by bringing up the preview with ionic serve now! Of course the image capturing only works if you have some kind of webcam attached or inside your computer.
+
+
+Geolocation - install two more plugins to get the current user location and natively share it
+
+// Install the geolocation plugin
+npm i @capacitor/geolocation
+
+// Install the share plugin
+npm i @capacitor/share
+
+
+To store the value and share it later with the share plugin. update the home/home.page.ts again and add new code for that.
+
+
+Add buttons to trigger the functionality and to display the result, which can easily be done inside an ion-card. Open the home/home.page.html again and change it.
+
+
+Testing your Capacitor PWA - While developing your app, the Service Worker is not injected unless you make a production build. That means, when you run the standard ionic serve command it’s not a full PWA yet.
+
+If you want to test out the different PWA functionalities locally it is recommended to simply install the http-server package, which can then host your application.
+
+Once installed, you just need to create a production build and run the local server like:
+
+ionic build --prod
+http-server www
+
+
+Deploying your Capacitor PWA - If you got your own server, you could simply copy the www folder you get after creating a build of your app and upload it there.
+
+Since most of the time that’s not the case, we can fall back to a simple static hosting service like Netlify instead.
+
+Because Netlify needs to build our app in the end, you need to add a new script to the scripts object of our package.json:
+
+"build:prod": "ng build --prod"
+
+
+More Info
+Duration (approx)	Difficulty
+> 1 hour	⭐⭐
+
+
+Submit Your Daily Challenge :
+Don’t forget to push to Github
+
+Submit your Daily Challenge to DI Learning
+
+
+
+
+Feedback
+Tell us what you thought about the chapter: Daily Challenge: Build Capacitor PWA
+
+
+© 2020 Developers Institute. All Rights Reserved.
+
+ 
+ 
+ 
+Mini Project Day
+0% Complete
+Exercises
+Daily Challenge
+Daily Challenge: Build Capacitor PWA
+10 XP  
